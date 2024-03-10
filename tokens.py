@@ -1,0 +1,33 @@
+
+
+tokens = {
+  '=' : 'tk_asig',
+  '+' : 'tk_suma',
+  '-' : 'tk_resta',
+  '/' : 'tk_div',
+  '*' : 'tk_mult',
+  '<' : 'tk_menor_que',
+  '>' : 'tk_mayor_que',
+  '!': 'tk_dif' , 
+  '%': 'tk_MOD', 
+  '{': 'tk_cor_izq',
+  '}' : 'tk_cor_der',
+  '(' : 'tk_par_izq',
+  ')': 'tk_par_der', 
+  ',': 'tk_coma',
+  ';': 'tk_punto_coma',
+  ':': 'tk_dos_puntos', 
+  '.': 'tk_punto', 
+  '&': 'tk_dir',
+  '++': 'tk_aum', 
+  '--': 'tk_decre', 
+  '>=': 'tk_mayor_igual', 
+  '<=': 'tk_menor_igual',
+  '[': 'tk_parc_izq',
+  ']': 'tk_parc_der',
+  '&&': 'tk_y',
+  '||': 'tk_o', 
+  '==': 'tk_comparacion',
+  '!=': 'tk_distinto',
+  '->': 'tk_ejecuta'
+}
