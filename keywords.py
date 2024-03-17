@@ -38,3 +38,7 @@ keywords = [
   'yield'
 ]
 
+spaces = [" ", "\n","\t"]
+
+tabs = ["\n","\t"]
+
