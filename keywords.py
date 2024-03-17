@@ -35,7 +35,8 @@ keywords = [
   'try',
   'while',
   'with',
-  'yield'
+  'yield',
+  'print'
 ]
 
 spaces = [" ", "\n","\t"]

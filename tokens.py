@@ -19,6 +19,7 @@ tokens = {
   ':': 'tk_dos_puntos', 
   '.': 'tk_punto', 
   '&': 'tk_dir',
+  '|': 'tk_or_bit',
   '++': 'tk_aum', 
   '--': 'tk_decre', 
   '>=': 'tk_mayor_igual', 
