@@ -12,9 +12,9 @@ class Lexer:
   def read_file(self):
     line = self.file.read()
     line += '\n'
-    counter = 0
+    counter = 0 
 
-    while counter < len(line):     
+    while counter < len(line):    
       if line[counter] in tokens.tokens:
           self.classifying()
           substr = f"{line[counter]}{line[counter+1]}"
@@ -58,6 +58,9 @@ class Lexer:
       elif(line[counter] != 0 and (line[counter] not in keywords.spaces)):
             self.lexema[0] = self.lexema[0] + line[counter]
       
+      if line[counter].isdigit() and not line[counter+1].isdigit():
+        self.classifying()
+
       if line[counter] == "\n" and counter < len(line):
           self.row += 1
           self.column = 0
