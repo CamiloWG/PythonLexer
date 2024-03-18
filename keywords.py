@@ -37,7 +37,12 @@ keywords = [
   'with',
   'yield',
   'print',
-  'bool'
+  'bool',
+  'object',
+  '__init__',
+  'self',
+  'str'
+
 ]
 
 spaces = [" ", "\n","\t"]
