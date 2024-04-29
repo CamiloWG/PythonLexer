@@ -41,7 +41,9 @@ keywords = [
   'object',
   '__init__',
   'self',
-  'str'
+  'str',
+  'int',
+  'bool'
 
 ]
 

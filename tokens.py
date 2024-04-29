@@ -9,7 +9,7 @@ tokens = {
   '<' : 'tk_menor_que',
   '>' : 'tk_mayor_que',
   '!': 'tk_dif' , 
-  '%': 'tk_MOD', 
+  '%': 'tk_mod', 
   '{': 'tk_cor_izq',
   '}' : 'tk_cor_der',
   '(' : 'tk_par_izq',
