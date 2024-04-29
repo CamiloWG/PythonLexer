@@ -5,9 +5,14 @@ import keywords, tokens
 class Lexer: 
   def __init__(self, file) -> None:
     self.file = file
+    self.tokens = []
     self.lexema = []
     self.row = 1
     self.column = 1
+  
+  def print_tokens(self):
+    for token in self.tokens:
+        print(token)
 
   def read_file(self):
     line = self.file.read()
@@ -19,10 +24,10 @@ class Lexer:
           self.classifying()
           substr = f"{line[counter]}{line[counter+1]}"
           if(substr in tokens.tokens):
-            print(f"<{tokens.tokens[substr]}, {self.row}, {self.column - len(line[counter])}>")
+            self.tokens.append(f"<{tokens.tokens[substr]}, {self.row}, {self.column - len(line[counter])}>")
             counter += 1
           else:
-            print(f"<{tokens.tokens[line[counter]]}, {self.row}, {self.column - len(line[counter])}>") 
+            self.tokens.append(f"<{tokens.tokens[line[counter]]}, {self.row}, {self.column - len(line[counter])}>") 
       elif line[counter] == "#":
           while (line[counter] not in keywords.tabs) and counter < len(line) - 1:
               counter += 1
@@ -37,7 +42,7 @@ class Lexer:
               self.column += 1
           self.lexema.append(line[counter])
           self.column += 1
-          print(f"""<tk_cadena, {"".join(self.lexema)}, {self.row}, {self.column - len(self.lexema[0])}>""")
+          self.tokens.append(f"""<tk_cadena, {"".join(self.lexema)}, {self.row}, {self.column - len(self.lexema[0])}>""")
           self.lexema.clear()
       elif line[counter] == "'":
           self.lexema.append(line[counter])
@@ -49,7 +54,7 @@ class Lexer:
               self.column += 1
           self.lexema.append(line[counter])
           self.column += 1
-          print(f"""<tk_cadena, {''.join(self.lexema)}, {self.row}, {self.column - len(self.lexema[0])}>""")
+          self.tokens.append(f"""<tk_cadena, {''.join(self.lexema)}, {self.row}, {self.column - len(self.lexema[0])}>""")
           self.lexema.clear()
       elif len(self.lexema) != 0 and line[counter] in keywords.spaces:
           self.classifying()
@@ -70,13 +75,13 @@ class Lexer:
   def classifying(self):
     if len(self.lexema) != 0:
         if self.lexema[0].isdigit():
-            print(f"<tk_entero, {self.lexema[0]}, {self.row}, {self.column - len(self.lexema[0])}>")
+            self.tokens.append(f"<tk_entero, {self.lexema[0]}, {self.row}, {self.column - len(self.lexema[0])}>")
             self.lexema.pop()  
         elif self.lexema[0] in keywords.keywords:
-            print(f"<{self.lexema[0]}, {self.row}, {self.column - len(self.lexema[0])}>")
+            self.tokens.append(f"<{self.lexema[0]}, {self.row}, {self.column - len(self.lexema[0])}>")
             self.lexema.pop()
         elif self.lexema[0].isidentifier():
-            print(f"<id, {self.lexema[0]}, {self.row}, {self.column - len(self.lexema[0])}>")
+            self.tokens.append(f"<id, {self.lexema[0]}, {self.row}, {self.column - len(self.lexema[0])}>")
             self.lexema.pop()
         else:
             sys.exit(f">>>> Error léxico (línea: {self.row}, posición: {self.column - len(self.lexema[0])})")
@@ -94,6 +99,7 @@ def main():
 
   py_lexer = Lexer(texto_archivo)
   py_lexer.read_file()
+  py_lexer.print_tokens()
 
   
 if __name__ == '__main__':
