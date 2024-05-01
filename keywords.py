@@ -43,8 +43,8 @@ keywords = [
   'self',
   'str',
   'int',
-  'bool'
-
+  'bool',
+  'float'
 ]
 
 spaces = [" ", "\n","\t"]

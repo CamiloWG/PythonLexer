@@ -9,7 +9,7 @@ gramatica_python = {
   "FOR": ["for id in id tk_dos_puntos", "for id in FUNCTION tk_dos_puntos"],
   "WHILE": ["while tk_par_izq IF_SENTENCE tk_par_der tk_dos_puntos", "while tk_par_izq id tk_par_der tk_dos_puntos"],
   "PRINT": ["print tk_par_izq PARAMS tk_par_der"],
-  "DEF": ["def id tk_par_izq DEF_PARAMS tk_par_der tk_dos_puntos"],
+  "DEF": ["def id tk_par_izq DEF_PARAMS tk_par_der tk_dos_puntos", "def id tk_par_izq DEF_PARAMS tk_par_der tk_ejecuta DATA_TYPE tk_dos_puntos"],
 
   "VAR_SENTENCE": ["OPERACIONES", "FUNCTION"],
   "OPERACIONES": ["VALOR_CON OPERADORES_ARIT OPERACIONES", "FUNCTION OPERADORES_ARIT OPERACIONES", "VALOR_CON", "FUNCTION"],
@@ -26,9 +26,9 @@ gramatica_python = {
   "PARAMS": ["FUNC_PARAMS", "FUNC_PARAMS tk_coma PARAMS"],
   "FUNC_PARAMS": ["VALOR_CON", "OBJ_ARRAY", "FUNCTION"],
 
-  "DEF_PARAMS": [],
-  "DATA_TYPE": ["str", "int", "bool"],
-  "DATA_OBJ": ["tk_parc_izq DATA_TYPE tk_parc_der", ]
+  "DEF_PARAMS": ["id", "id tk_dos_puntos DATA_OBJ", "id tk_coma DEF_PARAMS", "id tk_dos_puntos DATA_OBJ tk_coma DEF_PARAMS"],
+  "DATA_TYPE": ["str", "int", "bool", "float", "None", "id", "self"],
+  "DATA_OBJ": ["tk_parc_izq DATA_TYPE tk_parc_der", "DATA_TYPE"]
 
 
 
