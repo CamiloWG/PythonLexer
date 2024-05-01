@@ -9,6 +9,9 @@ class Lexer:
     self.lexema = []
     self.row = 1
     self.column = 1
+
+  def get_tokenized(self):
+     return tokens.TokenizedCode(self.tokens).raw_to_token()
   
   def print_tokens(self):
     for token in self.tokens:
@@ -85,7 +88,6 @@ class Lexer:
             self.lexema.pop()
         else:
             sys.exit(f">>>> Error léxico (línea: {self.row}, posición: {self.column - len(self.lexema[0])})")
-
 
 
 

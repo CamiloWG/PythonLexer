@@ -1,10 +1,13 @@
 import lexer as lex, sys
+import grammar as g
 
 
 
 class Parser:
-   def __init__(self, tokens):
+   def __init__(self, tokens, gramatica):
       self.tokens = tokens
+      self.grammar = gramatica
+  
     
     
 
@@ -21,6 +24,9 @@ def main():
 
   py_lexer = lex.Lexer(texto_archivo)
   py_lexer.read_file()
+  for tk in py_lexer.get_tokenized():
+     print("Name:", tk.name, "Lex:", tk.lexema, "Line:", tk.line, "Pos:", tk.pos)
+  py_parser = Parser(py_lexer.tokens, g.gramatica_python)
 
   
 if __name__ == '__main__':
