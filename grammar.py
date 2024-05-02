@@ -1,5 +1,5 @@
 gramatica_python = {
-  "PROGRAM": ["CLASS", "ID", "IMPORT", "FROM", "IF", "FOR", "WHILE", "PRINT", "DEF"],
+  "CONTENT": ["CLASS", "ID", "IMPORT", "FROM", "IF", "FOR", "WHILE", "PRINT", "DEF", "PASS"],
   "CLASS": ["class id tk_dos_puntos"],
   "ID": ["id ASIGN VALOR_CON",  "id ASIGN VAR_SENTENCE"],
   "ASIGN": ["tk_asig", "tk_aum", "tk_decre"],
@@ -30,6 +30,9 @@ gramatica_python = {
   "DATA_TYPE": ["str", "int", "bool", "float", "None", "id", "self"],
   "DATA_OBJ": ["tk_parc_izq DATA_TYPE tk_parc_der", "DATA_TYPE"]
 
-
-
 }
+
+
+
+def get_rule(rule):
+  return gramatica_python[rule]

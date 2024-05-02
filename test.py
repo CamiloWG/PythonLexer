@@ -1,3 +1,5 @@
 
-def f(self) -> None:
-  print()
+a = "sa"
+
+
+b = "345"

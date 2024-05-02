@@ -44,9 +44,9 @@ class TokenizedCode:
       raw_token = raw_token.replace("<", "").replace(">", "").replace(" ", "")
       obj = raw_token.split(",")
       if len(obj) == 4:
-        self.tokens.append(TokenObject(obj[0], obj[2], obj[3], obj[1]))
+        self.tokens.append(TokenObject(obj[0], int(obj[2]), int(obj[3]), obj[1]))
       elif len(obj) == 3:
-        self.tokens.append(TokenObject(obj[0], obj[1], obj[2]))
+        self.tokens.append(TokenObject(obj[0], int(obj[1]), int(obj[2])))
     
     return self.tokens
 
