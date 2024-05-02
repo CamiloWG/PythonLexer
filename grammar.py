@@ -17,7 +17,7 @@ gramatica_python = {
 
   "IF_SENTENCE": ["CONDICION and IF_SENTENCE", "CONDICION or IF_SENTENCE", "CONDICION", "not IF_SENTENCE"],
   "CONDICION": ["VALOR_CON OPERADOR VALOR_CON", "FUNCTION"],
-  "VALOR_CON": ["tk_entero", "id", "tk_entero tk_punto tk_entero", "False", "True", "tk_cadena"],
+  "VALOR_CON": ["id", "tk_entero tk_punto tk_entero", "False", "True", "tk_cadena", "tk_entero"],
   "OPERADOR": ["tk_mayor_que", "tk_menor_que", "tk_distinto", "tk_comparacion", "tk_mayor_igual", "tk_menor_igual"],
 
   "OBJ_ARRAY": ["tk_parc_izq PARAMS tk_parc_der", "tk_parc_izq tk_parc_der", "tk_cor_izq tk_cor_der", "tk_cor_izq PARAMS tk_cor_der", "tk_par_izq PARAMS tk_par_der", "tk_par_izq tk_par_der"],

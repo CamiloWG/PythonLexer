@@ -78,28 +78,32 @@ class Parser:
 
 
   def parse_import(self, tks_rem):
-    pass
-
-  def parse_import(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('IMPORT'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_from(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('FROM'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_if(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('IF'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_for(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('FOR'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_while(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('WHILE'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_print(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('PRINT'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_def(self, tks_rem):
-    pass
+    if self.validate_rule(tks_rem, g.get_rule('DEF'), True, True):
+      self.parsing(self.delete_tokens(tks_rem))
 
   def parse_content(self, tks_cont):
     return True
@@ -113,11 +117,14 @@ class Parser:
     for rule in rules:
       rule_array = rule.split(" ")
       valid = True
+      print("Rules: ", rule_array)
       for i, (token, valor) in enumerate(zip(tks_rem, rule_array)):
         last_token = token
         if(valor.isupper()):
           valid = self.validate_rule(tks_rem[i:], g.get_rule(valor), same_line, False)
         else: 
+          print("Rule:", valor)
+          print("Token: ", token.name, token.line, token.pos)
           if same_line and current_line != token.line:
             self.error(last_pos[0], last_pos[1], "Se encontro: ' '; Se esperaba: '"+str(self.token_symbol(valor))+"'.")
             valid = False
