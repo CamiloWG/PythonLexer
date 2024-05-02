@@ -9,7 +9,7 @@ gramatica_python = {
   "FOR": ["for id in id tk_dos_puntos", "for id in FUNCTION tk_dos_puntos"],
   "WHILE": ["while tk_par_izq IF_SENTENCE tk_par_der tk_dos_puntos", "while tk_par_izq id tk_par_der tk_dos_puntos"],
   "PRINT": ["print tk_par_izq PARAMS tk_par_der"],
-  "DEF": ["def id tk_par_izq DEF_PARAMS tk_par_der tk_dos_puntos", "def id tk_par_izq DEF_PARAMS tk_par_der tk_ejecuta DATA_TYPE tk_dos_puntos"],
+  "DEF": ["def id tk_par_izq DEF_PARAMS tk_par_der tk_dos_puntos", "def id tk_par_izq DEF_PARAMS tk_par_der tk_ejecuta DATA_TYPE tk_dos_puntos", "def id tk_par_izq tk_par_der tk_dos_puntos"],
 
   "VAR_SENTENCE": ["OPERACIONES", "FUNCTION"],
   "OPERACIONES": ["VALOR_CON OPERADORES_ARIT OPERACIONES", "FUNCTION OPERADORES_ARIT OPERACIONES", "VALOR_CON", "FUNCTION"],

@@ -24,11 +24,9 @@ class Parser:
     print("Tokens", [tk.name for tk in tokens_remaining])
     if len(tokens_remaining) == 0: 
       return print("El analisis sintactico ha finalizado exitosamente.")
-      
-    
     token = tokens_remaining[0]
-    current_rule = token.name.upper() 
-    
+    current_rule = token.name.upper()  
+
     if current_rule in self.grammar:
       if current_rule == "CLASS":
         self.parse_class(tokens_remaining)
@@ -47,7 +45,7 @@ class Parser:
       elif current_rule == "PRINT":
         self.parse_print(tokens_remaining)
       elif current_rule == "DEF":
-        self.parse_id(tokens_remaining)
+        self.parse_def(tokens_remaining)
     else:
       return self.error(token.line, token.pos)
       
@@ -108,7 +106,7 @@ class Parser:
   def parse_content(self, tks_cont):
     return True
 
-  def validate_rule(self, tks_rem, rules, same_line = False, check_last_token = False):
+  def validate_rule(self, tks_rem, rules, same_line = False, check_last_token = False, recursion = False):
     current_line = tks_rem[0].line
     last_pos = (1, 1)
     last_error = []
@@ -121,7 +119,7 @@ class Parser:
       for i, (token, valor) in enumerate(zip(tks_rem, rule_array)):
         last_token = token
         if(valor.isupper()):
-          valid = self.validate_rule(tks_rem[i:], g.get_rule(valor), same_line, False)
+          valid = self.validate_rule(tks_rem[i:], g.get_rule(valor), same_line, recursion=True)
         else: 
           print("Rule:", valor)
           print("Token: ", token.name, token.line, token.pos)
@@ -130,6 +128,7 @@ class Parser:
             valid = False
 
           if token.name != valor:
+            if recursion: continue
             last_error = [token.line, token.pos, "Se encontro: '"+str(self.token_symbol(token.name))+"'; Se esperaba: '"+str(self.token_symbol(valor))+"'."]
             valid = False
         
