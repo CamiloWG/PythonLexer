@@ -1,5 +1,6 @@
 # Python Lexer & Parser
-Analizador léxico de Python escrito en Python, tokeniza todo el código en Python y devuelve un output con todos estos escritos o informa de un problema en caso de encontrar errores léxicos.
+Analizador léxico de Python escrito en Python, tokeniza todo el código en Python y devuelve un output con la lista de tokens o informa de un problema en caso de encontrar errores léxicos.
+Analizador sintáctico de Python, toma los tokens del Lexer y analiza la sintaxis tenmiendo en cuenta las reglas gramaticales de Python, devuelve un output de error en caso de error sintáctico o un output de éxito.
 
 ------
 
