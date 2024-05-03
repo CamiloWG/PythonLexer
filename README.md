@@ -1,4 +1,4 @@
-# PythonLexer
+# Python Lexer & Parser
 Analizador léxico de Python escrito en Python, tokeniza todo el código en Python y devuelve un output con todos estos escritos o informa de un problema en caso de encontrar errores léxicos.
 
 ------
