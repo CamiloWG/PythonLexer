@@ -4,10 +4,15 @@ Analizador léxico de Python escrito en Python, tokeniza todo el código en Pyth
 ------
 
 ## **Forma de uso**
-Abrir una terminal y dirigirse al directorio del Lexer, una vez en el directorio del programa, ejecutar el siguiente comando:
+Abrir una terminal y dirigirse al directorio del proyecto, una vez en el directorio del programa, ejecutar el siguiente comando:
+
+> Usar el comando dependiendo si se quiere ejecutar el Parser o el Lexer
 
 ```bash
    py lexer.py nombre_archivo.py
+```
+```bash
+   py analyzer.py nombre_archivo.py
 ```
 
 Donde `nombre_archivo.py` será el nombre del archivo a analizar (deberá incluir la ruta si se encuentra en un directorio diferente).
